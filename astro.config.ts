@@ -11,7 +11,7 @@ export default defineConfig({
 			wrap: true,
 		},
 	},
-	site: "",
+	site: "https://effortless-trifle-ff0560.netlify.app/",
 	integrations: [
 		mdx({}),
 		tailwind({
