@@ -42,6 +42,9 @@ const url = new URL(Astro.request.url);
 			<a href="/posts" aria-current={url.pathname === "/posts" ? "page" : false}
 				>Blog
 			</a>
+			<a href="/prompts" aria-current={url.pathname === "/prompts" ? "page" : false}
+				>Prompts
+			</a>
 		</nav>
 	</span>
 	<ThemeToggle />
