@@ -6,12 +6,29 @@ const meta = {
 	description: "Prompts for every occassion",
 };
 ---
-
 <PageLayout meta={meta}>
 	<div class="space-y-6">
-		<h1 class="title">Coming Soon</h1>
+		<h1 class="title">Need some inspiration for your next read? No problem. I've got you covered.</h1>
 		<p>
-			No ideas? No problem.
+			World, the time has come to push the button<br />
+			<span class="text-fuchsia-500">Cue "Galvanize" by The Chemical Brothers</span> 
     </p>
+		<div class="bg-gradient-to-r from-amber-500 to-pink-500 text-white w-[300px] h-[100px] flex items-center text-center justify-center rounded-md">
+			<p id="prompt-idea" class="text-lg px-2">Ah the possibilities...</p>
+		</div>
+		<button id="prompt-btn" class="px-6 py-2 text-purple-100 rounded bg-gradient-to-r from-purple-600 to-purple-500">Generate Prompt</button>
 	</div>
 </PageLayout>
+<script>
+	import { prompts } from "src/assets/data/prompts";
+
+	// Get random prompt from list
+	function getPrompt(arr: any) {
+		const randomIndex = Math.floor(Math.random() * arr.length);
+		const item = arr[randomIndex];
+		return item;
+	}
+	document.getElementById('prompt-btn').addEventListener('click', function(){
+		document.getElementById('prompt-idea').innerText = getPrompt(prompts);
+	});
+</script>
